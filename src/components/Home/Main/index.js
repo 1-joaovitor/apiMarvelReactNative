@@ -3,6 +3,7 @@ import { FlatList, Image, View, Text, TouchableOpacity, ActivityIndicator, Refre
 import { styles } from "./style";
 import { useNavigation } from "@react-navigation/native";
 import { RenderLoader } from "../../RenderLoader";
+
 export default function Main ({ filterHeroesMarvel, loading, refresh, getAllHeroesApi, currentPage}){
     
  const navigation = useNavigation()
@@ -13,7 +14,9 @@ export default function Main ({ filterHeroesMarvel, loading, refresh, getAllHero
    
     return(
         <View style={styles.ContainerList}>
+           
             {loading == false ? 
+            
         <FlatList 
         onEndReached={LoadMoreItem} 
         onEndReachedThreshold={0.1} 
@@ -33,7 +36,7 @@ export default function Main ({ filterHeroesMarvel, loading, refresh, getAllHero
                 <Text style={styles.Subtitle}>{item.name}</Text>
             </View>
         </View>  )}}/>
-            : <ActivityIndicator  size={70} color="red" style={{marginTop:100}} /> }
+            : <ActivityIndicator  size={70} color="red" style={{marginTop:100}} /> } 
         </View>
      
     )

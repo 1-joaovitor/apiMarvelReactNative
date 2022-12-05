@@ -39,4 +39,7 @@ Search:{
         borderRadius:50,
        
 },
+mensageError:{
+        color:'white'
+}
 })
