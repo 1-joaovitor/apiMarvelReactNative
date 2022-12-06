@@ -1,14 +1,14 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
-import { Text, TextInput, View,   } from 'react-native';
+import { Text, TextInput, View,} from 'react-native';
 import { Styles } from './style'
 
-export default function Header ({ setSearch, Error}){
+export default function Header ({ setSearch}){
 
     return(
 
     <View>
-       
+      
         <LinearGradient colors={['red', '#1C1C1C']} style={{height:100}}/>
        
             <View style={Styles.ContainerTitle}>
@@ -21,7 +21,7 @@ export default function Header ({ setSearch, Error}){
             <View style={Styles.ContainerSearch}> 
              
                 <TextInput keyboardType='text' placeholderTextColor='white'  onChangeText={setSearch} 
-                placeholder={Error == false ? 'Buscar...' : 'Não foi possível carregar os heróis'} style={Styles.Search}/>
+                placeholder='  Buscar...' style={Styles.Search}/>
              
             </View> 
             

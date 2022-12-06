@@ -5,6 +5,7 @@ import { Styles } from "../../Home/Header/style";
 import Main from "../../Home/Main";
 import { useState,  } from "react";
 import { getHeroesApi } from "../../../../services/getHeroes";
+import Toast from 'react-native-toast-message'
 
 export default function Home (){
 const [heroesMarvel, setHeroesMarvel] = useState ([])
@@ -23,10 +24,15 @@ try{
     setHeroesMarvel([heroesMarvel, ...response?.data?.data?.results]);
     setCurrentPage(currentPage + 10)
     setLoading(false)
+
 }
     
 catch(e){
     setError(true);
+    Toast.show({
+        type: 'error',
+        text1: 'Erro! Não foi possível carregar os heróis 😔'
+});
 
 }
 
